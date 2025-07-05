@@ -31,20 +31,3 @@
 
 // console.log(25!=20); true
 // console.log(25!=25); false
-
-// logical operator
-// let num1 = 50;
-// let num2 = 30;
-// let num3 = 20;
-// console.log(num1 > num2 && num1 < num3); false
-
-// let num1 = 50;
-// let num2 = 30;
-// let num3 = 20;
-// console.log(num1 > num2 || num1 < num3); true
-
-// console.log(! true); 
-// console.log(! false); 
-
-console.log(! (28 > 25)); 
-console.log(! (28 < 25)); 
