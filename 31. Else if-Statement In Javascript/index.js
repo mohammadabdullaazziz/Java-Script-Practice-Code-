@@ -60,3 +60,69 @@ console.log('IF statement executed');
 console.log("condition not true.ELSE statement executed");
 }
 
+let marks = prompt("Enter your marks: ");
+marks = +marks; 
+
+if (marks >= 90 && marks <= 100) {
+    console.log("Your grade is: Golden A+");
+} 
+else if (marks >= 80 && marks < 90) { 
+    console.log("Your grade is: A+");
+} 
+else if (marks >= 70 && marks < 80) {
+    console.log("Your grade is: A");
+} 
+else if (marks >= 60 && marks < 70) {
+    console.log("Your grade is: A-");
+} 
+else if (marks >= 50 && marks < 60) {
+    console.log("Your grade is: B");
+} 
+else if (marks >= 40 && marks < 50) {
+    console.log("Your grade is: C"); 
+} 
+else if (marks >= 33 && marks < 40) { 
+    console.log("Your grade is: Passed");
+} 
+else if (marks >= 0 && marks < 33) {
+    console.log("Your grade is: Fail");
+} 
+else {
+   
+    console.log("Invalid Input! Please enter a number between 0 to 100.");
+}
+
+
+let marks = prompt("Enter your Mark number: ");
+marks = Number(marks); 
+
+
+if (isNaN(marks) || marks > 100 || marks < 0) {
+    console.log("দয়া করে ০ থেকে ১০০ এর মধ্যে সঠিক সংখ্যা দিন।");
+} 
+
+else if (marks >= 90) {
+    console.log("Your grade is: Golden A+");
+} 
+else if (marks >= 80) { 
+    console.log("Your grade is: A+");
+} 
+else if (marks >= 70) { 
+    console.log("Your grade is: A");
+} 
+else if (marks >= 60) {
+    console.log("Your grade is: A-");
+} 
+else if (marks >= 50) {
+    console.log("Your grade is: B");
+} 
+else if (marks >= 40) {
+    console.log("Your grade is: C");
+}
+else if (marks >= 33) {
+    console.log("Your grade is: Passed");
+} 
+
+else {
+    console.log("Your grade is: Fail");
+}
