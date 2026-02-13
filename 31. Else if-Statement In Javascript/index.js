@@ -126,3 +126,39 @@ else if (marks >= 33) {
 else {
     console.log("Your grade is: Fail");
 }
+
+
+// input === null → Cancel চাপলে detect করবে
+
+// trim() === "" → ফাঁকা দিলে ধরবে
+
+// isNaN(speed) → যদি abc টাইপ কিছু দেয়
+
+// Negative speed check
+
+// সব ক্ষেত্রে output নিশ্চিত
+
+let input = prompt("Enter Your Speed: ");
+let speed = Number(input);
+
+if (input === null) {
+    console.log("Input cancelled");
+} 
+else if (input.trim() === "" || isNaN(speed)) {
+    console.log("Please enter a valid number!");
+} 
+else if (speed <= 0) {
+    console.log("Speed cannot be negative!");
+} 
+else if (speed >= 80) {
+    console.log("Over speed");
+} 
+else if (speed >= 60) {
+    console.log("Normal");
+} 
+else if (speed >= 40) {
+    console.log("Slow");
+} 
+else {
+    console.log("Very Slow");
+}
