@@ -66,3 +66,50 @@ console.log(a > 0 || b > 0);
         console.log("output true");
     }
 
+
+// let name = "";
+// let userName = name || "Guest";
+
+// console.log(userName); // Guest
+// 👉 কারণ empty string "" false হিসেবে গণ্য হয়, তাই "Guest" assign হয়েছে।
+
+
+
+// let age = parseInt(prompt("Enter your age:"));
+// let hasID = prompt("Do you have voter ID? (yes/no)");
+
+// if (age >= 18 || hasID === "yes") {
+//     console.log("You can vote.");
+// } else {
+//     console.log("You cannot vote.");
+// }
+
+
+// let name = prompt("Enter your name:");
+
+// let userName = name || "Guest";
+
+// console.log("Welcome " + userName);
+// 👉 কিছু না লিখে Enter চাপলে output হবে:
+// Welcome Guest
+
+
+// let num1 = parseInt(prompt("Enter first number:"));
+// let num2 = parseInt(prompt("Enter second number:"));
+
+// if (num1 > 0 || num2 > 0) {
+//     console.log("At least one number is positive.");
+// } else {
+//     console.log("Both numbers are zero or negative.");
+// }
+// 👉 যেকোনো একটা positive হলেই condition true হবে।
+
+// let role = prompt("Enter your role (admin/moderator/user):");
+
+// if (role === "admin" || role === "moderator") {
+//     console.log("Access Granted");
+// } else {
+//     console.log("Access Denied");
+// }
+// 👉 admin বা moderator লিখলেই Access পাবে।
+
