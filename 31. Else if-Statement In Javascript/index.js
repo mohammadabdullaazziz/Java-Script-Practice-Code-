@@ -93,6 +93,34 @@ else {
 }
 
 
+let marks = Number(prompt("Enter your marks: "));
+
+if (marks > 100 || marks < 0) {
+    console.log("Invalid Input!"); 
+} else if (marks >= 90) {
+    console.log("Golden A++");
+} else if (marks >= 80) {
+    console.log("A++");
+} else if (marks >= 70) {
+    console.log("A Grade");
+} else if (marks >= 60) {
+    console.log("A-");
+} else if (marks >= 50) {
+    console.log("B Grade");
+} else if (marks >= 40) {
+    console.log("B");
+} else if (marks >= 33) {
+    console.log("C");
+} else {
+    console.log("Fail Hahahaha");
+}
+
+
+
+
+
+
+
 let marks = prompt("Enter your Mark number: ");
 marks = Number(marks); 
 
@@ -162,3 +190,4 @@ else if (speed >= 40) {
 else {
     console.log("Very Slow");
 }
+
