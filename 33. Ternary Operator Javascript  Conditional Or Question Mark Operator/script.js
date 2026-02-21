@@ -17,4 +17,29 @@ console.log(number + " is " + result);
 
 let age = 20;
 let eligibility = (age >= 18) ? "Can vote" : "Can not vote";
+
 console.log(eligibility); // Output: "Can vote"
+
+
+let marks = 40;
+let result = (marks >= 33) ? "Passed" : "Failed";
+console.log(result); // output: Passed
+
+
+let marks = 40;
+let result = (marks >= 50) ? console.log("Passed") : console.log("Failed"); output Failed
+
+let age = 15;
+let canVote = (age >= 18) ? "Yes" : "No";
+
+console.log(canVote); // Output: No
+
+
+
+let name = prompt("Enter your name: ");
+let age = Number(prompt("Enter your age: "));
+
+let status = (age >= 18) ? "(Adult)" : "(Child)";
+
+console.log("Hello " + name + "!");
+console.log("You are" + status);
