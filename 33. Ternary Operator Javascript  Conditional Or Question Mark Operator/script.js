@@ -48,3 +48,29 @@ console.log("You are" + status);
 let userName = prompt("Enter name: ");
 let displayName = (userName === "" || userName === null) ? "Guest" : userName;
 console.log("Welcome, " + displayName);
+
+
+
+let userAccess;
+let userName = prompt("Enter your name: ");
+userAccess = (userName === 'Abdullah') ? "Admin" : "Moderator;
+console.log(userAccess);
+(userName === "Abdullah") ? console.log("Admin") : Console.log("Moderator");
+
+
+let userCode = Number(prompt("Enter your 5 digit Code: "));
+let firstName = "File Open";
+let lastName = "Failed";
+let result = (userCode === 12345) ? firstName : lastName;
+console.log(result);
+
+
+
+let userCode = Number(prompt("Enter your 5 digit code: "));
+let fileName = "Secret_File.pdf";
+
+let access = (userCode === 12345) ? "File Open" : "Failed";
+let final = `Access: ${access}! 
+Your File(${fileName}) Now ${userCode === 12345 ? 'Open Your File' : 'Locked Your File'}`;
+console.log(final);
+
