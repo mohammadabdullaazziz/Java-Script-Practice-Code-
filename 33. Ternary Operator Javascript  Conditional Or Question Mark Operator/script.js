@@ -43,3 +43,8 @@ let status = (age >= 18) ? "(Adult)" : "(Child)";
 
 console.log("Hello " + name + "!");
 console.log("You are" + status);
+
+
+let userName = prompt("Enter name: ");
+let displayName = (userName === "" || userName === null) ? "Guest" : userName;
+console.log("Welcome, " + displayName);
