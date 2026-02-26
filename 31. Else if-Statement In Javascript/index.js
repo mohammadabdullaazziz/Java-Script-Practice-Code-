@@ -59,7 +59,7 @@ console.log('IF statement executed');
 } else {
 console.log("condition not true.ELSE statement executed");
 }
-
+--------------------------------------------------------------------------
 let marks = prompt("Enter your marks: ");
 marks = +marks; 
 
@@ -92,6 +92,30 @@ else {
     console.log("Invalid Input! Please enter a number between 0 to 100.");
 }
 
+---------
+let mark = prompt("Enter your mark: ");
+mark = +mark;
+
+if (mark >= 90 && mark <= 100) {
+    console.log("Golden A+");
+} else if (mark >= 80 && mark <= 89) {
+    console.log("A+");
+} else if (mark >= 70 && mark <= 79) { 
+    console.log("A grade");
+} else if (mark >= 60 && mark <= 69) {
+    console.log("A-");
+} else if (mark >= 50 && mark <= 59) {
+    console.log("B grade"); // 
+} else if (mark >= 40 && mark <= 49) {
+    console.log("C");
+} else if (mark >= 33 && mark <= 39) {
+    console.log("You passed");
+} else if (mark >= 0 && mark <= 32) {
+    console.log("You failed");
+} else {
+    console.log("Invalid Input! Please enter a number between 0 to 100.");
+}
+
 
 let marks = Number(prompt("Enter your marks: "));
 
@@ -114,8 +138,6 @@ if (marks > 100 || marks < 0) {
 } else {
     console.log("Fail Hahahaha");
 }
-
-
 
 
 
@@ -190,4 +212,5 @@ else if (speed >= 40) {
 else {
     console.log("Very Slow");
 }
+
 
