@@ -113,3 +113,24 @@ console.log(a > 0 || b > 0);
 // }
 // 👉 admin বা moderator লিখলেই Access পাবে।
 
+
+let userName = prompt("Enter name: ");
+// let userBlank = userName || "blank user"
+// if (userBlank == "blank user") {
+//   console.log("User is Blank");
+// } else{
+//   console.log("Your user name is " + userName);
+// }
+let userBlank = (userName === "" || userName === null) ? "Guest" : userName;
+console.log("Welcome, " + displayName);
+
+
+
+
+let userName = "";  // "Abdullah"
+if (userName == "" || userName == null) {
+    console.log("User name Required");
+} else {
+    console.log("Your name is " + userName);
+}
+
