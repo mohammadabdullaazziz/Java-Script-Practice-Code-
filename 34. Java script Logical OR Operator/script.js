@@ -115,6 +115,7 @@ console.log(a > 0 || b > 0);
 
 
 let userName = prompt("Enter name: ");
+console.log(typeof userName);
 // let userBlank = userName || "blank user"
 // if (userBlank == "blank user") {
 //   console.log("User is Blank");
@@ -125,12 +126,11 @@ let userBlank = (userName === "" || userName === null) ? "Guest" : userName;
 console.log("Welcome, " + displayName);
 
 
-
-
 let userName = "";  // "Abdullah"
 if (userName == "" || userName == null) {
     console.log("User name Required");
 } else {
     console.log("Your name is " + userName);
 }
+
 
