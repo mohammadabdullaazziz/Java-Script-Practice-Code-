@@ -61,3 +61,17 @@ if (hasTicket && age >= 18 && isSober) {
 } else {
     console.log("Sorry, you cannot enter.");
 }
+
+
+let userName = prompt("Enter your name: ");
+
+if (userName) {
+    let len = userName.length; 
+    if (len >= 8 && len <= 40) {
+        console.log("Valid Name");
+    } else {
+        console.log("Invalid Name! Length must be between 8 and 40.");
+    }
+} else {
+    console.log("You cancelled the your name.");
+}
