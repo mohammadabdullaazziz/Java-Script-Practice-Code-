@@ -48,3 +48,16 @@ const b2 = -2;
 
 console.log(a1 > 0 && b2 > 0);
 // Expected output: false
+
+
+
+
+let hasTicket = true;
+let age = 20;
+let isSober = true;
+
+if (hasTicket && age >= 18 && isSober) {
+    console.log("Welcome to the Concert!");
+} else {
+    console.log("Sorry, you cannot enter.");
+}
