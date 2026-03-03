@@ -90,4 +90,51 @@ console.log(3>2);
 console.log(10<5);
 console.log(5<10);
 
+---------------------------------------------------------
+
+let name = "Abdullah";
+let address = "Gongachora, Rongpur";
+let subject = "Programming";
+let grade = "A";
+
+let age = 30;
+let height = 5.2;
+let cgpa = 3.50;
+let accountBalance = 12.25486545;
+
+console.log("-------- Student Output --------\n");
+
+console.log(`My name is: ${name}`);
+console.log(`My age is: ${age} years`);
+console.log(`My height is: ${height} ft`);
+console.log(`My address is: ${address}`);
+console.log(`My subject is: ${subject}`);
+console.log(`My grade is: ${grade}`);
+console.log(`My CGPA is: ${cgpa.toFixed(2)}`);
+console.log(`My account balance is: $${accountBalance.toFixed(2)}`);
+
+
+(Professional) Version — Object ব্যবহার করে 
+
+const student = {
+    name: "Abdullah",
+    age: 30,
+    height: 5.2,
+    address: "Gongachora, Rongpur",
+    subject: "Programming",
+    grade: "A",
+    cgpa: 3.50,
+    accountBalance: 12.25486545
+};
+
+console.log("-------- Student Output --------");
+console.log(`My name is: ${student.name}`);
+console.log(`My age is: ${student.age}`);
+console.log(`My height is: ${student.height} ft`);
+console.log(`My address is: ${student.address}`);
+console.log(`My subject is: ${student.subject}`);
+console.log(`My grade is: ${student.grade}`);
+console.log(`My CGPA is: ${student.cgpa.toFixed(2)}`);
+console.log(`My account balance is: $${student.accountBalance.toFixed(2)}`);
+
 
