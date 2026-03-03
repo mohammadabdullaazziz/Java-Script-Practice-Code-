@@ -21,3 +21,26 @@ console.log(typeof (x))
 let s2 = +"Abdullah";
 console.log(s2);
 
+
+let str = "50";
+let num = +str; // Unary + ব্যবহার করা হলো
+
+console.log(num);        // আউটপুট: 50
+console.log(typeof num); // আউটপুট: number
+
+
+console.log(+true);  // আউটপুট: 1
+console.log(+false); // আউটপুট: 0
+
+let x = "10";
+let y = "20";
+
+console.log(x + y);   // আউটপুট: "1020" (কারণ এরা স্ট্রিং)
+console.log(+x + +y); // আউটপুট: 30 (উভয়কে নাম্বারে রূপান্তর করে যোগ করা হয়েছে)
+
+let name = "Aziz";
+console.log(+name); // আউটপুট: NaN
+
+console.log(+"");      // আউটপুট: 0 (খালি স্ট্রিং ০ হয়ে যায়)
+console.log(+null);    // আউটপুট: 0
+console.log(+undefined); // আউটপুট: NaN
