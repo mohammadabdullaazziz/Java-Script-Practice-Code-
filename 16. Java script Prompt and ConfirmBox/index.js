@@ -56,3 +56,38 @@ CGPA: ${cgpa} (${typeof cgpa})
 if (cgpa >= 3.5) {
     console.log("Result: Excellent performance!");
 }
+
+
+
+
+----------------------------------------------------------
+const name = prompt("Enter your name: ");
+const age = Number(prompt("Enter your age: "));
+const height = parseFloat(prompt("Enter your height: "));
+const address = prompt("Enter your address: ");
+const cgpa = parseFloat(prompt("Enter your cgpa: "));
+// ফোন নাম্বার স্ট্রিং হিসেবে রাখলে শুরুর '0' হারাবে না
+const phoneNumber = prompt("Enter your phone Number: "); 
+
+console.log(`
+--------- Your Information ------------
+Name: ${name} | Type: ${typeof name}
+Age: ${age} | Type: ${typeof age}
+Height: ${height} | Type: ${typeof height}
+Address: ${address} | Type: ${typeof address}
+CGPA: ${cgpa} | Type: ${typeof cgpa}
+Phone: ${phoneNumber} | Type: ${typeof phoneNumber}
+---------------------------------------
+`);
+
+সঠিক নিয়ম: typeof কে ${} এর ভেতরে রাখতে হবে। 
+ভুল: ${name} typeof ${name} ➡️ আউটপুট: Aziz typeof Aziz
+সঠিক: ${name} (Type: ${typeof name}) ➡️ আউটপুট: Aziz (Type: string)
+
+ফোন নাম্বারের শুরুতে '0' হারিয়ে যাওয়া
+parseInt(prompt("Enter your phone Number: "))
+বাংলাদেশে ফোন নাম্বার শুরু হয় 01 দিয়ে। কিন্তু যখন parseInt বা Number ব্যবহার করা হয়, জাভাস্ক্রিপ্ট শুরুর 0 টাকে ফেলে দেয়।
+
+উদাহরণ: ইনপুট দিলে 01711, আউটপুট আসবে 1711।
+
+সমাধান: ফোন নাম্বার সব সময় String হিসেবে রাখা উচিত। অর্থাৎ শুধু prompt(...) লিখলেই হবে।
