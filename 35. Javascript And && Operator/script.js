@@ -75,3 +75,28 @@ if (userName) {
 } else {
     console.log("You cancelled the your name.");
 }
+
+Improved & Cleaner Version------------
+
+let userName = prompt("Enter your user name:");
+let password = Number(prompt("Enter your password:"));
+
+let userAccess;
+
+if (userName === "Abdullah" && password === 19971) {
+    userAccess = "Admin";
+} else {
+    userAccess = "Moderator";
+}
+
+console.log("You are " + userAccess);
+
+Professional Version-------------
+let userName = prompt("Enter your user name:");
+let password = prompt("Enter your password:");
+
+if (userName === "Abdullah" && Number(password) === 19971) {
+    console.log("You are Admin");
+} else {
+    console.log("You are Moderator");
+}
