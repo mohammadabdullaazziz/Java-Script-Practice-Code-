@@ -100,3 +100,62 @@ if (userName === "Abdullah" && Number(password) === 19971) {
 } else {
     console.log("You are Moderator");
 }
+
+
+
+
+let userName = "Abdullah";
+let userRole = "Admin";
+
+if ( userName === "Abdullah" && userRole === "Admin") { //userName && userRole------>true
+   console.log("Hello " + userName); //or userRole
+} else {
+   console.log("Invalid Credential!");
+}
+
+let result = 2 && 0 && 5;
+console.log(result);
+
+let num = 5 && 6 && 7;
+console.log(num);
+
+let test = "Abdullah" && "Aziz";
+console.log(test);
+
+
+
+let userName1 = "Abcd";
+let userRole2 = "Admin";
+let test2;
+
+if (test2 = userName1 && userRole2) { 
+   console.log("Hello " + test2); 
+} else {
+   console.log("Invalid Credential!");
+}
+
+
+let amount = Number(prompt("Enter your number (0-100):"));
+
+if (amount < 0 || amount > 100) {
+    console.log("Invalid Amount");
+} 
+else if (amount >= 90 && amount <= 100) {
+    console.log("Amount is too High");
+} 
+else {
+    console.log("Amount is too Low");
+}
+
+
+
+let amount = Number(prompt("Enter your number: (0-100"));
+
+if (amount >= 90 && amount <= 100) {
+    console.log("Amount is High");
+} else if (amount < 90) {
+    console.log("Amount is Low");
+} else {
+    console.log("Invalid Amount");
+}
+
