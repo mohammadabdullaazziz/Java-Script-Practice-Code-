@@ -74,3 +74,16 @@ let final = `Access: ${access}!
 Your File(${fileName}) Now ${userCode === 12345 ? 'Open Your File' : 'Locked Your File'}`;
 console.log(final);
 
+
+let userAccess;
+let username = prompt("Enter Your Username");
+let name1 = "Mohammad";
+let name2 = "Arman";
+// if (username == "password") {
+//     console.log(name1);
+// } else {
+//     console.log(name2);
+// }
+
+userAccess = (username =="password") ? "Admin" : "Moderator";
+console.log(userAccess);
