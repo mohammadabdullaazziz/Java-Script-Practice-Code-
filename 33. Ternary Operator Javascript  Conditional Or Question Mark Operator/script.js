@@ -1,3 +1,10 @@
+Ternary Operator হলো জাভাস্ক্রিপ্টে if-else কন্ডিশন লেখার একটি খুব ছোট এবং সহজ পদ্ধতি। একে Conditional Operator-ও বলা হয়। 
+এটি মূলত এক লাইনে সিদ্ধান্ত নেওয়ার জন্য ব্যবহার করা হয়।
+
+এর গঠন (Syntax) হলো এরকম:
+condition ? expressionIfTrue : expressionIfFalse;
+
+সহজভাবে বললে: শর্ত ? সত্য হলে এটা : মিথ্যা হলে ওটা
 let username = prompt("Enter Your Username");
 let userAccess;
 
