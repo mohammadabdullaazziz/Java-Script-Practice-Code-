@@ -51,13 +51,26 @@ let status = (age >= 18) ? "(Adult)" : "(Child)";
 console.log("Hello " + name + "!");
 console.log("You are" + status);
 
-
+---------------------------------------------------------------------------------
 let userName = prompt("Enter name: ");
 let displayName = (userName === "" || userName === null) ? "Guest" : userName;
 console.log("Welcome, " + displayName);
 
+এটি মূলত কোনো ইউজারের নাম না থাকলে তাকে ডিফল্টভাবে "Guest" হিসেবে দেখানোর একটি প্রফেশনাল পদ্ধতি।
 
+এখানে চেক করা হচ্ছে—ইউজার কি নাম না লিখে খালি রেখেছে ("") অথবা (||) ইউজার কি ক্যান্সেল ক্লিক করেছে (null)?
+যদি ওপরের শর্তটি সত্য হয় (অর্থাৎ ইউজার নাম দেয়নি), তবে displayName এর মান হয়ে যাবে "Guest"।
 
+মিথ্যা হলে (False): : userName
+
+যদি ইউজার তার নাম দেয় (শর্তটি মিথ্যা হয়), তবে ইউজার যা লিখেছে সেটাই displayName এ জমা হবে 
+
+ইউজার যা লিখবে তা userName ভ্যারিয়েবলে জমা হবে।
+
+যদি ইউজার কিছু না লিখে "OK" দেয়, তবে মান হবে একটি খালি স্ট্রিং ""।
+
+যদি ইউজার "Cancel" বাটনে ক্লিক করে, তবে মান হবে null।
+-------------------------------------------------------------------------------------------
 let userAccess;
 let userName = prompt("Enter your name: ");
 userAccess = (userName === 'Abdullah') ? "Admin" : "Moderator;
