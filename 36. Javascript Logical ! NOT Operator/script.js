@@ -1,3 +1,73 @@
+জাভাস্ক্রিপ্টে Logical NOT (!) অপারেটরটি খুবই শক্তিশালী। এটি মূলত কোনো একটি মানকে তার উল্টো মানে রূপান্তর করে। অর্থাৎ, সত্যকে মিথ্যা আর মিথ্যাকে সত্য বানিয়ে দেয়।
+সহজ কথায়, এটি কোনো বুলিয়ান (Boolean) মানকে উল্টে দেয়।
+
+let isHappy = true;
+console.log(!isHappy); // আউটপুট: false
+
+let isRaining = false;
+console.log(!isRaining); // আউটপুট: true
+
+জাভাস্ক্রিপ্টে সব ডেটা সরাসরি true বা false নয়, কিন্তু সেগুলোকে 'সত্যের মতো' বা 'মিথ্যার মতো' ধরা হয়। ! অপারেটর এই মানগুলোকেও উল্টে দিতে পারে।
+
+জাভাস্ক্রিপ্টের ৬টি Falsy মান (এদের আগে ! বসালে true হবে):
+"" (খালি স্ট্রিং)
+0
+null
+undefined
+false
+NaN
+console.log(!0);         // true (কারণ 0 একটি ফলসি মান)
+console.log(!"Hello");   // false (কারণ যেকোনো পূর্ণ স্ট্রিং ট্রুথি মান)
+
+কোনো মানকে সরাসরি বুলিয়ান (true/false)-এ কনভার্ট করার জন্য দুইবার নট (!!) ব্যবহার:
+
+প্রথম ! মানটিকে উল্টে দেয়।
+দ্বিতীয় ! সেটিকে আবার উল্টে আসল বুলিয়ান রূপে নিয়ে আসে।
+
+let name = "Abdullah";
+console.log(!!name); // আউটপুট: true (স্ট্রিংটি পূর্ণ কি না তা চেক করছে)
+let age = 0;
+console.log(!!age);  // আউটপুট: false (কারণ 0 মানে নেই বা মিথ্যা)
+
+মাঝে মাঝে অনেক বড় কন্ডিশনকে ! দিয়ে ছোট করা যায়।
+!(a && b) আর (!a || !b) একই কথা।
+
+let isSunny = true;
+let isWeekend = false;
+
+// যদি রোদ না থাকে অথবা সপ্তাহান্ত না হয়
+if (!isSunny || !isWeekend) {
+    console.log("Stay home!");
+}
+
+
+let userName = "";
+let displayName = !userName ? "Guest" : userName;
+console.log(displayName);
+console.log(typeof displayName);
+userName হলো "" (Falsy)।
+! অপারেটর কোনো মানকে উল্টে দেয়। তাই !"" হয়ে যাবে true।
+শর্তটি এখন সত্য (True)। তাই জাভাস্ক্রিপ্ট প্রথম অংশটি বেছে নেবে। অর্থাৎ displayName এর মান হবে "Guest"।
+
+
+
+let userName = "Abdullah";
+let displayName = !userName ? "Guest" : userName;
+console.log(displayName);
+console.log(typeof displayName); 
+
+Ternary Operator (? :) কাজই করে শর্ত দেখে সিদ্ধান্ত নেয় কোন মানটি দেখাবে।
+শর্ত ? (সত্য হলে এই মান) : (মিথ্যা হলে এই মান);
+
+let userName = ""; (খালি স্ট্রিং মানে মিথ্যা)।
+তখন !userName হয়ে যায় True।
+ফলাফল: যেহেতু শর্ত সত্য, তাই সে ১ম মান ("Guest") রিটার্ন করবে।
+
+
+let userName = "Abdullah"; (নাম আছে মানে সত্য)।
+তখন !userName হয়ে যায় False।
+ফলাফল: যেহেতু শর্ত মিথ্যা, তাই সে ১ম মান ("Guest") বাদ দিয়ে ২য় মান (userName) রিটার্ন করবে।
+
 // Logical ! NOT Operator
 console.log(! true);
 console.log(! false);
