@@ -271,4 +271,248 @@ else {
     console.log("Very Slow");
 }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+let speed = prompt("Enter speed(0-100)");
+speed = +speed;
 
+if (speed >= 90 && speed <= 100) {
+    console.log("Very High");
+} else if (speed >= 80 && speed <= 89) {
+    console.log("High Speed");
+} else if (speed >= 50 && speed <= 79) {
+    console.log("Medium");
+} else if (speed >= 0 && speed <= 49) {
+    console.log("Good");
+} else {
+    console.log("Invalid (0-100)"); 
+}
+
+speed >= 80 && speed <= 89 (৮০ থেকে ৮৯)
+speed >= 50 && speed <= 79 (৫০ থেকে ৭৯)
+যদি কেউ ৭৯.৫ (79.5) ইনপুট দেয়? তখন কোড কোনো আউটপুট দেবে না, কারণ ৭৯.৫ সংখ্যাটি কোনো রেঞ্জেই নেই।
+
+প্রফেশনাল কোডিংয়ে আমরা সাধারণত এভাবে লিখা হয় এতে কোনো সংখ্যাই বাদ পড়ে না।
+
+let speed = prompt("Enter speed(0-100)");
+speed = +speed; // দশমিক থাকলেও এটি কাজ করবে
+
+if (speed >= 90 && speed <= 100) {
+    console.log("Very High");
+} else if (speed >= 80 && speed < 90) { 
+    console.log("High Speed");
+} else if (speed >= 50 && speed < 80) { 
+    console.log("Medium");
+} else if (speed >= 0 && speed < 50) {
+    console.log("Good");
+} else {
+    console.log("Invalid (0-100)");
+}
+
+
+let speed = prompt("Enter speed (0-100):");
+speed = +speed;
+
+if (speed > 100 || speed < 0) {
+    console.log("Invalid (0-100)"); 
+} else if (speed >= 90) {
+    console.log("Very High");
+} else if (speed >= 80) {
+    console.log("High Speed");
+} else if (speed >= 50) {
+    console.log("Medium");
+} else {
+    console.log("Good");
+}
+পয়েন্ট বা দশমিক সংখ্যাসহ সব মান কভার করার জন্য শর্তগুলো এমনভাবে দিতে হয় যাতে একটির শেষ অন্যটির শুরু হয়। একে বলা হয় "Continuous Range"।
+
+ক্যান্সেল (Cancel) দিলে কেন "Good" দেখাচ্ছে, তার কারণ:
+
+১. prompt যখন null রিটার্ন করে
+যখন প্রম্পট বক্সে "Cancel" বাটনে ক্লিক করা হয়, জাভাস্ক্রিপ্ট তখন speed ভ্যারিয়েবলে কোনো লেখা বা সংখ্যা পাঠায় না, বরং পাঠায় null।
+
+২. ইউনারি প্লাস (+) এর
+কোডের দ্বিতীয় লাইনে আছে: speed = +speed;
+জাভাস্ক্রিপ্টে যখন আপনি কোনো null মানের আগে প্লাস (+) চিহ্ন বসানো হয়, তখন জাভাস্ক্রিপ্ট সেটিকে সংখ্যায় রূপান্তর করার চেষ্টা করে। আর null কে সংখ্যায় রূপান্তর করলে তার মান হয় 0।
+let test = null;
+console.log(+test); // আউটপুট: 0
+
+৩. কন্ডিশন চেক (কেন "Good" দেখাচ্ছে?)
+যেহেতু ক্যান্সেল করার কারণে আপনার speed এখন 0 হয়ে গেছে, তাই জাভাস্ক্রিপ্ট if-else লজিকগুলো চেক করতে শুরু করে:
+
+speed >= 90? (০ কি ৯০-এর বড়?) -> না (False)
+speed >= 80? (০ কি ৮০-এর বড়?) -> না (False)
+speed >= 50? (০ কি ৫০-এর বড়?) -> না (False)
+speed >= 0 && speed <= 49? (০ কি ০-এর সমান বা বড় এবং ৪৯-এর ছোট?) -> হ্যাঁ (True)
+যেহেতু এই শর্তটি সত্য হয়ে গেছে, তাই কনসোলে "Good" লেখাটি চলে আসে।
+
+যদি চাওয়া হয় ক্যান্সেল করলে "Good" না দেখিয়ে "Invalid" বা অন্য কিছু দেখাবে, তবে চেক করতে হবে ইউজার আদৌ কিছু দিয়েছে কি না।
+let speedInput = prompt("Enter speed(0-100)");
+
+// ইউজার যদি ক্যান্সেল করে তবে speedInput হবে null
+if (speedInput === null) {
+    console.log("Input Cancelled!");
+} else {
+    let speed = +speedInput; // সংখ্যায় রূপান্তর 
+
+    if (speed >= 90 && speed <= 100) {
+        console.log("Very High");
+    } else if (speed >= 80 && speed < 90) {
+        console.log("High Speed");
+    } else if (speed >= 50 && speed < 80) {
+        console.log("Medium");
+    } else if (speed >= 0 && speed < 50) {
+        console.log("Good");
+    } else {
+        console.log("Invalid (0-100)");
+    }
+}
+জাভাস্ক্রিপ্ট অনেক সময় ডাটা টাইপ নিয়ে নিজে নিজেই সিদ্ধান্ত নেয় (যাকে বলে Type Coercion)। null কে 0 বানিয়ে ফেলার কারণেই লজিক অনুযায়ী সেটি "Good" রেঞ্জে ঢুকে পড়েছে।
+
+
+!!!!!!!!!যখন প্রম্পট বক্সে কিছু না লিখে শুধু "OK" বাটনে ক্লিক করা হয়, তখন জাভাস্ক্রিপ্ট একটি খালি স্ট্রিং ("") রিটার্ন করে। আর এই খালি স্ট্রিংটিই কোডে থাকা + (প্লাস) চিহ্নের কারণে 0 (শূন্য) হয়ে যাচ্ছে।
+যখন প্রম্পটে কিছু না লিখে OK দেওয়া হয়:
+
+speed এর মান হয়: "" (Empty String)।
+যখন  speed = +speed;, তখন জাভাস্ক্রিপ্ট এই খালি স্ট্রিংকে সংখ্যায় রূপান্তর করার চেষ্টা করে।
+জাভাস্ক্রিপ্টের নিয়ম অনুযায়ী, +"" এর মান হয় 0।
+let input = ""; 
+console.log(+input); // আউটপুট: 0
+
+কেন "Good" আউটপুট আসে?
+যেহেতু speed এখন ০, তাই জাভাস্ক্রিপ্ট আপনার শর্তগুলো চেক করে:
+speed >= 90? (না)
+speed >= 80? (না)
+speed >= 50? (না)
+speed >= 0 && speed <= 49? (হ্যাঁ! কারণ ০ সংখ্যাটি ০-এর সমান)।
+যেহেতু এই রেঞ্জটি সত্য হয়ে গেছে, তাই সে "Good" দেখাচ্ছে।
+
+যদি চাওয়া হয় যে ইউজার কিছু না লিখে OK দিলে বা উল্টোপাল্টা কিছু লিখলে সেটি "Good" দেখাবে না, তবে চেক করতে হবে ইনপুটটি আসলে খালি কি না।
+let input = prompt("Enter speed(0-100)");
+
+// ইউজার যদি কিছু না লিখে OK দেয় (input === "") 
+// অথবা যদি ক্যান্সেল করে (input === null)
+if (input === "" || input === null) {
+    console.log("Please enter a valid number!");
+} else {
+    let speed = +input;
+
+    if (isNaN(speed)) {
+        console.log("This is not a number!");
+    } else if (speed >= 90 && speed <= 100) {
+        console.log("Very High");
+    } else if (speed >= 80 && speed < 90) {
+        console.log("High Speed");
+    } else if (speed >= 50 && speed < 80) {
+        console.log("Medium");
+    } else if (speed >= 0 && speed < 50) {
+        console.log("Good");
+    } else {
+        console.log("Invalid (0-100)");
+    }
+}
+
+Cancel ক্লিক করলে: জাভাস্ক্রিপ্ট পায় null, যা + করলে হয় 0।
+
+কিছু না লিখে OK দিলে: জাভাস্ক্রিপ্ট পায় "", যা + করলেও হয় 0।
+জাভাস্ক্রিপ্ট "" এবং null-কে গাণিতিক কাজের সময় 0 হিসেবে ধরে নেয়।
+
+
+isNaN() Function:
+জাভাস্ক্রিপ্টে ইনপুট ভ্যালিডেশনের জন্য isNaN() একটি অত্যন্ত গুরুত্বপূর্ণ ফাংশন। এর পূর্ণরূপ হলো "is Not a Number"। এটি মূলত চেক করে যে কোনো একটি ভ্যালু বা মান "সংখ্যা নয়" এমন কিছু কি না।
+১. বেসিক কাজ (Basic Working)
+isNaN() ফাংশনটি যেকোনো মান গ্রহণ করে এবং ফলাফল হিসেবে Boolean (true / false) রিটার্ন করে।
+
+true রিটার্ন করে: যদি মানটি সংখ্যা না হয় (যেমন: "Hello", undefined)।
+
+false রিটার্ন করে: যদি মানটি একটি বৈধ সংখ্যা হয় (যেমন: 10, 5.5, "100")।
+
+console.log(isNaN("Hello")); // true (কারণ এটি সংখ্যা নয়)
+console.log(isNaN(100));     // false (কারণ এটি একটি সংখ্যা)
+console.log(isNaN("100"));   // false (জাভাস্ক্রিপ্ট "100" স্ট্রিংটিকে সংখ্যায় রূপান্তর করতে পারে)
+
+২. isNaN() কেন ব্যবহার করবোঃ
+ইউজার যদি সংখ্যার বদলে ভুল করে "abc" লিখে OK দিত, তবে আপনার কোড উল্টোপাল্টা রেজাল্ট দিতে পারত। isNaN() দিয়ে সেটি আটকানো যায়:
+
+let input = prompt("Enter speed:");
+let speed = +input;
+
+if (isNaN(speed)) {
+    console.log("Invalid input! Please enter numbers only.");
+} else {
+    console.log("Your speed is: " + speed);
+}
+
+যখন isNaN(value) কল করা হয়, জাভাস্ক্রিপ্ট পর্দার আড়ালে নিচের ধাপগুলো অনুসরণ করে:
+
+প্রথমে সে মানটিকে Number-এ রূপান্তর করার চেষ্টা করে (যেমন: Number(value))।
+
+যদি রূপান্তর করতে গিয়ে সে NaN (Not a Number) পায়, তবেই সে true দেয়।
+
+আর যদি সফলভাবে সংখ্যায় রূপান্তর করতে পারে, তবে সে false দেয়।
+
+জাভাস্ক্রিপ্ট কিছু কিছু মানকে সংখ্যা হিসেবে গণ্য করে,
+খালি স্ট্রিং ("") বা null: এগুলোকে জাভাস্ক্রিপ্ট 0 হিসেবে ধরে। তাই isNaN("") বা isNaN(null) দিলে ফলাফল আসবে false (অর্থাৎ সে মনে করছে এগুলো সংখ্যা)।
+বুলিয়ান (true / false): true মানে ১ এবং false মানে ০। তাই isNaN(true) দিলে আসবে false।
+
+৫. Number.isNaN() বনাম isNaN()ঃ
+
+আধুনিক জাভাস্ক্রিপ্টে (ES6) আরও একটি ভার্সন আছে— Number.isNaN()। এটি একটু বেশি কঠোর (Strict)।
+isNaN("abc"): এটি "abc"-কে সংখ্যায় রূপান্তর করার চেষ্টা করে এবং true দেয়।
+Number.isNaN("abc"): এটি কোনো রূপান্তর করে না। এটি সরাসরি দেখে মানটি আসলে NaN কি না। যেহেতু "abc" একটি স্ট্রিং, তাই এটি false দেবে।
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Math.floor()ঃ
+Math.floor() হলো জাভাস্ক্রিপ্টের একটি বিল্ট-ইন ফাংশন, যা যেকোনো দশমিক সংখ্যাকে (Decimal Number) তার নিকটবর্তী নিচের দিকের পূর্ণ সংখ্যায় (Integer) রূপান্তর করে।
+সহজ কথায়, এটি সংখ্যাটিকে সবসময় "মেঝেতে" (Floor) নামিয়ে আনে। দশমিকের পরে যাই থাকুক না কেন (যেমন: .১ বা .৯), সেটিকে ছেঁটে ফেলে দিয়ে শুধু নিচের পূর্ণ সংখ্যাটি রাখে।
+একটি স্পিড বা মার্কস ইনপুট নিয়েছেন যা দশমিকে আছে। Math.floor() সেটিকে এভাবে পরিবর্তন করবে:
+
+Math.floor(89.1)  ➜  89
+
+Math.floor(89.9)  ➜  89 (এখানে ৮৯.৯ হলেও সে এটিকে ৯০ বানাবে না, কারণ এটি সবসময় নিচের দিকে নামায়)
+
+Math.floor(45.0)  ➜  45
+
+Math.floor(-5.1)  ➜  -6 (ঋণাত্মক সংখ্যার ক্ষেত্রে এটি আরও নিচের দিকে যায়)
+
+প্রোগ্রামিংয়ে অনেক সময় আমাদের নিখুঁত পূর্ণ সংখ্যা দরকার হয়। যেমন:
+
+স্পিড মিটার: যদি কেউ ৮৯.৫ দেয়, আপনি তাকে "৮৯" হিসেবে ধরে কোনো একটি ক্যাটাগরিতে ফেলতে পারেন।
+
+পেমেন্ট: যদি কোনো হিসাবে টাকা আসে ১০.৭৫ টাকা, আপনি হয়তো কাস্টমারকে শুধু ১০ টাকাই দেখাতে চান।
+
+র্যান্ডম নম্বর: লটারি বা লুডু খেলার ছক্কা তৈরির সময় এটি প্রচুর ব্যবহার করা হয়।
+
+let input = prompt("Enter speed (0-100):");
+
+// ১. চেক করা হচ্ছে ইউজার কিছু লিখেছে কি না বা ক্যান্সেল করেছে কি না
+if (input === "" || input === null) {
+    console.log("Input cannot be empty!");
+} else {
+    // ২. ইনপুটকে সংখ্যায় রূপান্তর এবং Math.floor() দিয়ে পূর্ণ সংখ্যা করা
+    let speed = Math.floor(+input);
+
+    // ৩. চেক করা হচ্ছে ইনপুটটি কি আসলে একটি বৈধ সংখ্যা?
+    if (isNaN(speed)) {
+        console.log("Error: Please enter a valid number, not text.");
+    } 
+    // ৪. রেঞ্জ অনুযায়ী রেজাল্ট দেখানো
+    else if (speed >= 90 && speed <= 100) {
+        console.log("Very High");
+    } else if (speed >= 80 && speed <= 89) {
+        console.log("High Speed");
+    } else if (speed >= 50 && speed <= 79) {
+        console.log("Medium");
+    } else if (speed >= 0 && speed <= 49) {
+        console.log("Good");
+    } else {
+        console.log("Invalid Range (0-100 only)");
+    }
+}
+
+Math.round() এবং Math.ceil() এর সাথে পার্থক্য:
+
+ফাংশন	                কাজ	                                            উদাহরণ (৮৯.৬)	      আউটপুট
+Math.floor()	          সবসময় নিচের দিকে নামায়।	                          Math.floor(89.6)	     89
+Math.ceil()	            সবসময় উপরের দিকে (সিলিংয়ে) উঠায়।	                Math.ceil(89.1)	       90
+Math.round()	          দশমিকের মান .৫ বা তার বেশি হলে উপরে, নয়তো নিচে।	Math.round(89.6)	     90
