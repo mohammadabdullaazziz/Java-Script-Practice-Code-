@@ -309,6 +309,22 @@ if (speed >= 90 && speed <= 100) {
 }
 
 
+let speed = Number(prompt("Enter your speed: "));
+
+if (speed > 100 || speed < 0 || isNaN(speed)) {
+    console.log("Invalid Input"); 
+} else if (speed >= 90) {
+    console.log("Very hard");
+} else if (speed >= 50) {
+    console.log("Hard");
+} else if (speed >= 30) {
+    console.log("Medium");
+} else {
+    console.log("Slow");
+}
+
+
+
 let speed = prompt("Enter speed (0-100):");
 speed = +speed;
 
