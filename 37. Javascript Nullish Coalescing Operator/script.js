@@ -1,3 +1,35 @@
+JavaScript-এ Nullish Coalescing Operator (??) একটি অত্যন্ত দরকারী অপারেটর।
+এটি মূলত কোনো ভেরিয়েবলের মান যদি null বা undefined হয়, তবে একটি ডিফল্ট (Default) মান সেট করার জন্য ব্যবহার করা হয়।
+
+"যদি বাম পাশের মানটি নেই (null/undefined) হয়, তবে ডান পাশের মানটি নাও।"
+let result = value1 ?? value2;
+এখানে যদি value1 এর মান null অথবা undefined হয়, তবে result এর মান হবে value2। অন্যথায়, result এর মান value1-ই থাকবে।
+
+let username = null;
+let displayName = username ?? "Guest User";
+console.log(displayName); // আউটপুট আসবে: Guest User
+
+যদি ইউজার নাম দিতো:
+let username = "Abdullah";
+let displayName = username ?? "Guest User";
+
+console.log(displayName); // আউটপুট আসবে: Abdullah
+
+
+Logical OR (||): এটি বাম পাশের মানটি Falsy (যেমন: 0, "", false, null, undefined) হলেই ডান পাশের মানটি নেয়।
+
+Nullish Coalescing (??): এটি শুধুমাত্র null এবং undefined হলেই ডান পাশের মানটি নেয়। 0 বা খালি স্ট্রিং ("") কে এটি বৈধ মান হিসেবে গণ্য করে।
+
+let score = 0;
+
+let result1 = score || 10; // এখানে ০ কে "মিথ্যা" বা Falsy ধরে ১০ আউটপুট দেবে
+let result2 = score ?? 10; // এখানে ০ কে একটি "ভ্যালিড ভ্যালু" হিসেবে ধরে ০-ই আউটপুট দেবে
+
+console.log(result1); // Output: 10
+console.log(result2); // Output: 0
+
+
+
 // Javascript Nullish Coalescing Operator
 let user;
 let userName = user ?? "Guest";
@@ -219,7 +251,7 @@ console.log(test);  output 10
 এখানে আউটপুটের এই বিশাল পার্থক্যের মূল কারণ হলো Operator Precedence
 সহজ কথায়, গুণ (*) চিহ্নের ক্ষমতা ?? চিহ্নের চেয়ে অনেক বেশি।
 
-১. প্রথম ক্ষেত্রে: (num1 ?? 5) * (num2 ?? 10)এখানে তুমি ব্র্যাকেট () ব্যবহার করেছ। আমরা জানি, ব্র্যাকেটের কাজ সবার আগে হয়।
+১. প্রথম ক্ষেত্রে: (num1 ?? 5) * (num2 ?? 10)এখানে ব্র্যাকেট () ব্যবহার করা হয়েছে। ব্র্যাকেটের কাজ সবার আগে হয়।
 (num1 ?? 5): যেহেতু num1 এর মান ১০ (যা null/undefined নয়), তাই এখান থেকে পাওয়া যায় ১০।
 (num2 ?? 10): যেহেতু num2 এর মান ২০, তাই এখান থেকে পাওয়া যায় ২০।
 হিসাব: 10 * 20 = 200।
