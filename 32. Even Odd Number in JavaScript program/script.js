@@ -10,30 +10,39 @@ if ( (num % 2) == 0) {
 
 }
 
+----------------------------------------------------------------------------------
+let input = prompt("Enter a number to check Even or Odd:");
 
-if (input === null) {      // ১ম if শুরু
+if (input === null) {      
+    // ১ম if: ইউজার যদি প্রম্পটে 'Cancel' বাটন চাপে
     console.log("Input cancelled");
-}                          // ১ম if শেষ
+} 
 
-else {                     // else শুরু
+else {                     
+    // ১ম else: যদি ইউজার কিছু লিখে 'OK' চাপে
     let num = Number(input);
 
-    if (input.trim() === "" || isNaN(num)) {   // ২য় if শুরু
+    if (input.trim() === "" || isNaN(num)) {   
+        // ২য় if: যদি বক্স খালি থাকে অথবা ইউজার সংখ্যা ছাড়া অন্য কিছু (যেমন: abc) লেখে
         console.log("Please enter a valid number!");
-    }                                          // ২য় if শেষ
+    } 
 
-    else if (!Number.isInteger(num)) {         // ৩য় if
+    else if (!Number.isInteger(num)) {         
+        // ৩য় if: যদি ইউজার দশমিক সংখ্যা দেয় (যেমন: ৫.৫)
         console.log("Please enter an integer number!");
     } 
 
-    else if (num % 2 === 0) {                  // ৪র্থ if
+    else if (num % 2 === 0) {                  
+        // ৪র্থ if: যদি সংখ্যাটি ২ দিয়ে নিঃশেষে বিভাজ্য হয়
         console.log(num + " is an Even Number");
     } 
 
-    else {                                     // শেষ else
+    else {                                     
+        // শেষ else: উপরের কোনোটি না হলে সেটি অবশ্যই বেজোড় সংখ্যা
         console.log(num + " is an Odd Number");
-    }                                          // ভিতরের if-else শেষ
-}                                              // বাইরের else শেষ
+    } 
+}
+
 
 
 ✔ Cancel detect
