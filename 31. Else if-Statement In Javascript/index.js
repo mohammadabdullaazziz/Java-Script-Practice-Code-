@@ -427,6 +427,30 @@ if (input === "" || input === null) {
     }
 }
 
+
+// ১. আগে স্ট্রিং হিসেবে ইনপুট নিন, কনভার্ট করবেন না
+let input = prompt("Enter your marks: (0-100) ");
+
+// ২. ইনপুট ভ্যালিডেশন করুন (স্ট্রিং অবস্থায়)
+if (input === null || input.trim() === "" || isNaN(Number(input))) {
+    console.log("Enter a valid number");
+} else {
+    // ৩. ভ্যালিডেশন পাস করলে তখন সংখ্যায় রূপান্তর করুন
+    let marks = Number(input); 
+
+    if (marks >= 90 && marks <= 100) {
+        console.log("Very High");
+    } else if (marks >= 80 && marks < 90) {
+        console.log("High Speed");
+    } else if (marks >= 50 && marks < 80) {
+        console.log("Medium");
+    } else if (marks >= 0 && marks < 50) {
+        console.log("Good");
+    } else {
+        console.log("Invalid (0-100)");
+    }
+}
+
 Cancel ক্লিক করলে: জাভাস্ক্রিপ্ট পায় null, যা + করলে হয় 0।
 
 কিছু না লিখে OK দিলে: জাভাস্ক্রিপ্ট পায় "", যা + করলেও হয় 0।
