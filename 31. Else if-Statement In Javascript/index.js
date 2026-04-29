@@ -271,6 +271,70 @@ else {
     console.log("Very Slow");
 }
 
+
+
+
+let input = prompt("Enter Your Speed: ");                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+let speed = Number(input);
+
+if (input === null) {
+    console.log("Input cancelled");
+} 
+else if (input.trim() === "" || isNaN(speed)) {
+    console.log("Please enter a valid number!");
+} 
+// এখানে ০ কে আলাদাভাবে চেক করো
+else if (speed === 0) {
+    console.log("You are standing still!"); 
+}
+else if (speed < 0) {
+    console.log("Speed cannot be negative!");
+} 
+else if (speed >= 80) {
+    console.log("Over speed");
+} 
+// ... বাকি অংশ
+else {
+    console.log("Very Slow");
+}
+
+
+
+let input = prompt("Enter Your Speed: ");
+
+// ১. ইনপুট ভ্যালিডেশন (ক্যানসেল, খালি বা টেক্সট চেক)
+if (input === null) {
+    console.log("Input cancelled");
+} 
+else if (input.trim() === "" || isNaN(Number(input))) {
+    console.log("Please enter a valid number!");
+} 
+else {
+    // ইনপুট ঠিক থাকলে সংখ্যায় রূপান্তর
+    let speed = Number(input);
+
+    // ২. লজিক্যাল কন্ডিশন চেক
+    if (speed < 0) {
+        console.log("Speed cannot be negative!");
+    } 
+    else if (speed === 0) {
+        console.log("You are not moving (Speed: 0)");
+    }
+    else if (speed >= 80) {
+        console.log("Status: Over speed! (Please slow down)");
+    } 
+    else if (speed >= 60) {
+        console.log("Status: Normal");
+    } 
+    else if (speed >= 40) {
+        console.log("Status: Slow");
+    } 
+    else {
+        // এই ব্লকে শুধু ১ থেকে ৩৯ পর্যন্ত সংখ্যাগুলো আসবে
+        console.log("Status: Very Slow");
+    }
+}
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 let speed = prompt("Enter speed(0-100)");
 speed = +speed;
