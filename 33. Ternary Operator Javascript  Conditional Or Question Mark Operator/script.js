@@ -51,6 +51,45 @@ let status = (age >= 18) ? "(Adult)" : "(Child)";
 console.log("Hello " + name + "!");
 console.log("You are" + status);
 
+
+let name = prompt("Enter your name: ");
+let age = parseFloat(prompt("Enter your age: "));
+
+// টারনারি দিয়ে আউটপুট মেসেজ নির্ধারণ
+let message = isNaN(age) 
+    ? "Please enter a valid number for age." 
+    : `Your name is: ${name}\nYou are: ${age >= 18 ? "Adult" : "Child"}`;
+
+console.log(message);
+
+
+
+let name = prompt("Enter your name: ");
+let inputAge = prompt("Enter your age: ");
+let age = parseFloat(inputAge);
+
+// চেক করা হচ্ছে বয়স কি আসলেই একটি সংখ্যা?
+if (isNaN(age)) {
+    console.log("Please enter a valid number for age.");
+} else {
+    console.log(`Your name is: ${name}`); // Template Literal ব্যবহার
+    
+    // ১৮ বা ২০ এর শর্ত ঠিক করা
+    let result = (age >= 18) ? "Adult" : "Child";
+    
+    console.log(`You are: ${result}`);
+}
+
+
+
+let name = prompt("Enter your name: ");
+let age = parseFloat(prompt("Enter your age: "));
+
+// টারনারি অপারেটর দিয়ে আলাদা console.log ব্যবহার
+isNaN(age) 
+    ? console.log("Please enter a valid number for age.") 
+    : (console.log(`Your name is: ${name}`), 
+       console.log(`You are: ${age >= 18 ? "Adult" : "Child"}`));
 ---------------------------------------------------------------------------------
 let userName = prompt("Enter name: ");
 let displayName = (userName === "" || userName === null) ? "Guest" : userName;
