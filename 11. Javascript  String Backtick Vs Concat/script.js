@@ -1,4 +1,22 @@
+জাভাস্ক্রিপ্টে স্ট্রিং জোড়া দেওয়ার জন্য + অপারেটর বা .concat() (concat) ব্যবহার করার চেয়ে ব্যাকটিক (`) বা টেমপ্লেট লিটারাল (Template Literals) ব্যবহার করা আধুনিক, সহজ এবং রিডেবল। 
+
+// ১. ক্যাটাকটিনেশন বা প্লাস অপারেটর (+)
+let name = "Abdullah";
+let message1 = "Hello " + name + ",\nHow are you?";
+console.log(message1);
+
+// ২. (Template Literal) 
+let message2 = `Hello ${name},
+How are you?`; 
+console.log(message2);
+
+
 <h3>String Data Type</h3> 
+জাভাস্ক্রিপ্টে String Data Type প্রধানত ৩ ভাবে ডিক্লেয়ার বা ঘোষণা করা যায়
+
+Single Quote	'Hello'
+Double Quote	"Hello"
+Backticks	`Hello`
 
 let name1 = "It's alright";
 let name2 = "He is called 'Abdullah'";
