@@ -594,4 +594,94 @@ console.log(`${"Hobbies".padEnd(labelWidth)} : ${hobbies}`);
 console.log(`${"Married".padEnd(labelWidth)} : ${married ? "Yes" : "No"}`);
 console.log(`${"Account Balance".padEnd(labelWidth)} : ${accountBalance.toFixed(2)} BDT`);
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// --- ৪ জনের ডাটা ---
+let n1 = "Mohammad", r1 = "101", s1 = "Backend",  p1 = "01568451112";
+let n2 = "Abdullah", r2 = "102", s2 = "Frontend", p2 = "01745677826";
+let n3 = "Aziz",   r3 = "103", s3 = "Fullstack", p3 = "01772685006";
+let n4 = "Arman",    r4 = "104", s4 = "DevOps",    p4 = "01854126355";
+
+// কলামের প্রস্থ নির্ধারণ (Column Widths)
+const nameWidth = 15;
+const rollWidth = 10;
+const subWidth  = 15;
+const phoneWidth = 15;
+
+console.log("==================== STUDENT LIST ====================");
+
+// ১. টেবিলের হেডার (Header)
+console.log(
+    "Name".padEnd(nameWidth) + 
+    "Roll".padEnd(rollWidth) + 
+    "Subject".padEnd(subWidth) + 
+    "Phone".padEnd(phoneWidth)
+);
+
+// ২. ডিভাইডার লাইন
+console.log("-".repeat(nameWidth + rollWidth + subWidth + phoneWidth));
+
+// ৩. ডাটা রো (Data Rows) - padEnd ব্যবহার করে
+console.log(n1.padEnd(nameWidth) + r1.padEnd(rollWidth) + s1.padEnd(subWidth) + p1.padEnd(phoneWidth));
+console.log(n2.padEnd(nameWidth) + r2.padEnd(rollWidth) + s2.padEnd(subWidth) + p2.padEnd(phoneWidth));
+console.log(n3.padEnd(nameWidth) + r3.padEnd(rollWidth) + s3.padEnd(subWidth) + p3.padEnd(phoneWidth));
+console.log(n4.padEnd(nameWidth) + r4.padEnd(rollWidth) + s4.padEnd(subWidth) + p4.padEnd(phoneWidth));
+
+console.log("======================================================");
+
 console.log("=====================================================");
+
+==================== STUDENT LIST ====================
+Name           Roll      Subject        Phone          
+------------------------------------------------------
+Mohammad       101       Backend        01568451112    
+Abdullah       102       Frontend       01745677826    
+Aziz         103       Fullstack      01772685006
+Arman          104       DevOps         01854126355   
+======================================================
+
+Header Section: প্রথমে "Name", "Roll" ইত্যাদি লিখে সেগুলোকে padEnd() করা হয়েছে। এতে একটি নির্দিষ্ট গ্যাপ তৈরি হলো।
+Column Widths:  আলাদা আলাদা কলামের জন্য আলাদা প্রস্থ দেওয়া হয়েছে। যেমন: রোলের জন্য ১০ ঘর যথেষ্ট, কিন্তু নামের জন্য ১৫ ঘর।
+Data Rows: প্রতিটি স্টুডেন্টের ভেরিয়েবলকে (যেমন n1, r1) ঠিক হেডারের সমান প্রস্থ (padEnd) । এর ফলে নামের নিচে নাম এবং রোলের নিচে রোল একদম সোজা হয়ে বসবে।
+
+// --- ৪ জনের ডাটা (ভেরিয়েবল দিয়ে) ---
+let n1 = "Mohammad", r1 = "101", s1 = "Backend",  p1 = "01568451112";
+let n2 = "Abdullah", r2 = "102", s2 = "Frontend", p2 = "01745677826";
+let n3 = "Aziz",   r3 = "103", s3 = "Fullstack", p3 = "01772685006";
+let n4 = "Arman",    r4 = "104", s4 = "DevOps",    p4 = "01854126355";
+
+// কলামের প্রস্থ নির্ধারণ
+const nameW = 12, rollW = 8, subW = 12, phnW = 15;
+
+// টেবিলের উপরের বর্ডার
+console.log("+" + "-".repeat(nameW + 2) + "+" + "-".repeat(rollW + 2) + "+" + "-".repeat(subW + 2) + "+" + "-".repeat(phnW + 2) + "+");
+
+// ১. টেবিলের হেডার (Header)
+console.log(
+    `| ${"Name".padEnd(nameW)} | ${"Roll".padEnd(rollW)} | ${"Subject".padEnd(subW)} | ${"Phone".padEnd(phnW)} |`
+);
+
+// ২. হেডারের নিচের বর্ডার
+console.log("+" + "=".repeat(nameW + 2) + "+" + "=".repeat(rollW + 2) + "+" + "=".repeat(subW + 2) + "+" + "=".repeat(phnW + 2) + "+");
+
+// ৩. ডাটা রোগুলো (Data Rows)
+console.log(`| ${n1.padEnd(nameW)} | ${r1.padEnd(rollW)} | ${s1.padEnd(subW)} | ${p1.padEnd(phnW)} |`);
+console.log(`| ${n2.padEnd(nameW)} | ${r2.padEnd(rollW)} | ${s2.padEnd(subW)} | ${p2.padEnd(phnW)} |`);
+console.log(`| ${n3.padEnd(nameW)} | ${r3.padEnd(rollW)} | ${s3.padEnd(subW)} | ${p3.padEnd(phnW)} |`);
+console.log(`| ${n4.padEnd(nameW)} | ${r4.padEnd(rollW)} | ${s4.padEnd(subW)} | ${p4.padEnd(phnW)} |`);
+
+// ৪. টেবিলের নিচের বর্ডার
+console.log("+" + "-".repeat(nameW + 2) + "+" + "-".repeat(rollW + 2) + "+" + "-".repeat(subW + 2) + "+" + "-".repeat(phnW + 2) + "+");
+
++--------------+----------+--------------+-----------------+
+| Name         | Roll     | Subject      | Phone           |
++==============+==========+==============+=================+
+| Mohammad     | 101      | Backend      | 01568451112     |
+| Abdullah     | 102      | Frontend     | 01745677826     |
+| Aziz         | 103      | Fullstack    | 01772685006     |
+| Arman        | 104      | DevOps       | 01854126355     |
++--------------+----------+--------------+-----------------+
+
+বর্ডার লাইন: + এবং - ব্যবহার করে চারদিকে একটি ফ্রেম তৈরি করা হয়েছে।
+ভার্টিক্যাল বার (|): প্রতিটি ডাটার মাঝে | ব্যবহার করায় কলামগুলো আলাদাভাবে চেনা যাচ্ছে।
+Template Literals: ব্যাকটিক (``) ব্যবহার করে ${} এর ভেতরে padEnd বসানো হয়েছে, যাতে কোডটি দেখতে ক্লিন লাগে।
+স্পেসিং: padEnd এর আগে এবং পরে একটি করে অতিরিক্ত স্পেস  (যেমন: | ${...} |), যাতে লেখাগুলো বর্ডারের সাথে লেগে না যায়।
