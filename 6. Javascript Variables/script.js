@@ -425,4 +425,173 @@ console.log("Hobbies".padEnd(20) + " : " + hobbies);
 console.log("Married".padEnd(20) + " : " + (married ? "Yes" : "No"));
 console.log("Balance".padEnd(20) + " : " + accountBalance.toFixed(2) + " BDT");
 
+
+জাভাস্ক্রিপ্টে \n, \t, এবং \b কে বলা হয় Escape Characters। এগুলো স্ট্রিংয়ের ভেতরে বিশেষ কিছু কাজ (যেমন নতুন লাইন তৈরি করা বা জায়গা রাখা) করার জন্য ব্যবহৃত হয়।
+\n (New Line)  এটি ব্যবহার করা হয় নতুন একটি লাইন তৈরি করার জন্য।
+
+let message = "Hello\nMohammad";
+console.log(message);
+Hello
+Mohammad
+
+\b (Backspace)
+\b এর কাজ হলো ঠিক তার আগের একটি অক্ষরকে মুছে ফেলা (যেমন কিবোর্ডের Backspace বাটন চেপে একটি অক্ষর কাটি)। 
+তবে আধুনিক ব্রাউজার কনসোলে এর প্রভাব সবসময় দেখা যায় না, কিন্তু অনেক টার্মিনালে এটি কাজ করে।
+
+let text = "Helloo\b"; // এখানে দুটি 'o' আছে, কিন্তু \b একটিকে মুছে দেবে
+console.log(text);
+
+const myProfile = "NAME:\t\tMohammad\nSUBJECT:\tBackend Engineer\nCOUNTRY:\tBangladesh";
+console.log("Student Summary:");
+console.log("----------------------------");
+console.log(myProfile);
+
+
+\t (Horizontal Tab)
+এটি ব্যবহার করা হয় লেখার মাঝে একটি বড় গ্যাপ বা ট্যাব (সাধারণত ৪ বা ৮টি স্পেসের সমান) দেওয়ার জন্য। এটি ডেটাকে কলাম আকারে সাজাতে খুব কাজে লাগে।
+
+console.log("Name\t\tAge\tSubject");
+console.log("Mohammad\t28\tBackend");
+
+
+.padEnd \t:
+.padEnd() হলো একটি "Space Filler" বা জায়গা পূরণকারী মেথড। এটি নিশ্চিত করে যে একটি স্ট্রিং (লেখা) অন্তত নির্দিষ্ট একটি দৈর্ঘ্য (এখানে labelWidth) পর্যন্ত লম্বা হবে। 
+যদি মূল লেখাটি ছোট হয়, তবে এটি বাকি জায়গাটি স্পেস দিয়ে ভরাট করে দেয়।
+
+ম্যানুয়াল স্পেস বনাম ডাইনামিক স্পেস:
+ম্যানুয়াল (Manual): যদি console.log("Name      : " + name) , তবে গুনে গুনে স্পেস দিতে হবে। 
+যদি পরে "Name" এর বদলে "Full Name" , লিখা হয় তবে পুরো লাইনটির স্পেসিং নষ্ট হয়ে যাবে।
+
+padEnd(labelWidth): এটি স্বয়ংক্রিয়ভাবে হিসাব করে। যদি labelWidth = 20 দেওয়া হয়, তবে লেখাটি ৫ অক্ষরের হোক বা ১০ অক্ষরের, সে ডানে প্রয়োজনীয় স্পেস যোগ করে মোট ২০ ঘর পূরণ করবে।
+
+const labelWidth = 15; // কলামের প্রস্থ নির্ধারণ 
+
+console.log("Field".padEnd(labelWidth) + " : Value");
+console.log("-".repeat(30));
+
+// \t এর কাজ এখন padEnd দিয়ে 
+console.log("Name".padEnd(labelWidth) + " : Mohammad");
+console.log("Age".padEnd(labelWidth) + " : 28");
+console.log("Subject".padEnd(labelWidth) + " : Backend Engineer");
+console.log("Address".padEnd(labelWidth) + " : Rangpur");
 console.log("=================================================");
+.padEnd \t
+const labelWidth = 15;
+কাজ: এখানে একটি ধ্রুবক (constant) মান সেট করা হয়েছে
+
+উদ্দেশ্য: প্রতিটি ফিল্ডের নাম (যেমন: Name, Age) যেন অন্তত ১৫টি অক্ষরের সমান জায়গা নিবে। এটি বারবার ব্যবহার না করে একটি ভেরিয়েবলে 
+রাখলে পরে এক জায়গায় পরিবর্তন করলেই পুরো প্রোফাইল বদলে যাবে।
+
+console.log("Field".padEnd(labelWidth) + " : Value");
+
+"Field".padEnd(labelWidth): এটি "Field" শব্দটির পর এতগুলো স্পেস যোগ করবে যেন মোট দৈর্ঘ্য ১৫ হয়।
+
+ফলাফল: Field           (এখানে ৫টি অক্ষর আর ১০টি স্পেস মিলে মোট ১৫ ঘর)। এরপর তার সাথে যুক্ত হবে  : Value।
+
+console.log("-".repeat(30));
+.repeat(30): এটি জাভাস্ক্রিপ্টের একটি মেথড যা একটি স্ট্রিংকে (এখানে হাইফেন -) ৩০ বার রিপিট বা পুনরাবৃত্তি করে। এর ফলে একটি সোজা বর্ডার তৈরি হয়।
+
+console.log("Name".padEnd(labelWidth) + " : Mohammad");
+console.log("Age".padEnd(labelWidth) + " : 28");
+"Name" এর দৈর্ঘ্য ৪। padEnd(15) করায় সে ডানে আরও ১১টি স্পেস যোগ করে দিয়েছে।
+"Age" এর দৈর্ঘ্য ৩। padEnd(15) করায় সে ডানে আরও ১২টি স্পেস যোগ করে দিয়েছে।
+
+
+যেহেতু দুটি শব্দই এখন ১৫ ঘরের জায়গা দখল করছে, তাই পরের কোলন (:) চিহ্নটি একদম একই সোজা লাইনে নিচে নিচে বসছে। এটিই হলো \t (Tab) এর বিকল্প হিসেবে padEnd ব্যবহার করার সুবিধা।
+console.log("=================================================");
+কাজ: এটি আপনার প্রোফাইলের শেষ সীমানা বোঝানোর জন্য একটি স্টাইলিশ বর্ডার।
+
+Field           : Value
+------------------------------
+Name            : Mohammad
+Age             : 28
+Subject         : Backend Engineer
+Address         : Rangpur
+=================================================
+------------------------------------------------------------------------------------------------------------------------------
+
+labelWidth use Variable: 
+=======================
+labelWidth  সেট করে কোডটি সাজানো হলো। এতে বাম পাশের লেবেলগুলোর জন্য জায়গা বাড়বে, যা বড় লেবেল (যেমন: Account Balance) ব্যবহারের সময় সুবিধাজনক হবে।
+
+const labelWidth = 20; // কলামের প্রস্থ ১৫ থেকে বাড়িয়ে ২০ করা হয়েছে
+
+console.log("Field".padEnd(labelWidth) + " : Value");
+console.log("-".repeat(45)); // গ্যাপ বাড়ায় বর্ডারটিও একটু বড় করে দিলাম
+
+// padEnd(20) ব্যবহার করে প্রতিটি ফিল্ড সাজানো
+console.log("Name".padEnd(labelWidth) + " : Mohammad Abdullah");
+console.log("Age".padEnd(labelWidth) + " : 30");
+console.log("Subject".padEnd(labelWidth) + " : Backend Engineer");
+console.log("Address".padEnd(labelWidth) + " : Gongachora, Rangpur");
+console.log("Blood Group".padEnd(labelWidth) + " : B+");
+console.log("Skills".padEnd(labelWidth) + " : C, JavaScript, Python");
+console.log("Account Balance".padEnd(labelWidth) + " : 89.60 BDT");
+
+console.log("=====================================================");
+
+
+Field                : Value
+---------------------------------------------
+Name                 : Mohammad Abdullah
+Age                  : 30
+Subject              : Backend Engineer
+Address              : Gongachora, Rangpur
+Blood Group          : B+
+Skills               : C, JavaScript, Python
+Account Balance      : 89.60 BDT
+=====================================================
+
+// --- Constant Data (অপরিবর্তনীয়) ---
+const name = "Mohammad Abdullah";
+const dob = "15-06-1997";
+const bloodGroup = "B+";
+const religion = "Islam";
+const country = "Bangladesh";
+const nidNumber = "1997541258745";
+
+// --- Variable Data (পরিবর্তনশীল) ---
+let age = 30;
+let cgpa = 3.50;
+let address = "Gongachora, Rangpur";
+let subject = "Backend Engineering";
+let married = false;
+let accountBalance = 89.5982145897;
+let gmail = "programmeraziz216@gmail.com";
+let phone = "01568451112";
+let skills = "C, JavaScript, C++, Python";
+let hobbies = "Coding, Reading, Traveling";
+let session = "2025-26";
+
+const labelWidth = 20;
+
+console.log("================== STUDENT PROFILE ==================");
+
+// ব্যক্তিগত তথ্য
+console.log(`${"Name".padEnd(labelWidth)} : ${name}`);
+console.log(`${"Age".padEnd(labelWidth)} : ${age}`);
+console.log(`${"Date of Birth".padEnd(labelWidth)} : ${dob}`);
+console.log(`${"NID Number".padEnd(labelWidth)} : ${nidNumber}`);
+console.log(`${"Blood Group".padEnd(labelWidth)} : ${bloodGroup}`);
+console.log(`${"Religion".padEnd(labelWidth)} : ${religion}`);
+
+console.log("-".repeat(53));
+
+// প্রাতিষ্ঠানিক তথ্য
+console.log(`${"Subject".padEnd(labelWidth)} : ${subject}`);
+console.log(`${"Session".padEnd(labelWidth)} : ${session}`);
+console.log(`${"CGPA".padEnd(labelWidth)} : ${cgpa.toFixed(2)}`);
+console.log(`${"Skills".padEnd(labelWidth)} : ${skills}`);
+
+console.log("-".repeat(53));
+
+// যোগাযোগ ও অন্যান্য
+console.log(`${"Gmail".padEnd(labelWidth)} : ${gmail}`);
+console.log(`${"Phone".padEnd(labelWidth)} : ${phone}`);
+console.log(`${"Address".padEnd(labelWidth)} : ${address}`);
+console.log(`${"Country".padEnd(labelWidth)} : ${country}`);
+console.log(`${"Hobbies".padEnd(labelWidth)} : ${hobbies}`);
+console.log(`${"Married".padEnd(labelWidth)} : ${married ? "Yes" : "No"}`);
+console.log(`${"Account Balance".padEnd(labelWidth)} : ${accountBalance.toFixed(2)} BDT`);
+
+console.log("=====================================================");
