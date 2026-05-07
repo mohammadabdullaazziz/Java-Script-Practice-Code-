@@ -229,6 +229,66 @@ console.log(`My CGPA is: ${cgpa.toFixed(2)}`);
 console.log(`My account balance is: $${accountBalance.toFixed(2)}`);
 
 
+
+// --- Constant Data ---
+const name = "Mohammad Abdullah";
+const dob = "15-06-1997";
+const bloodGroup = "B+";
+const religion = "Islam";
+const country = "Bangladesh";
+const nidNumber = "1997541258745";
+const birthPlace = "Rangpur";
+
+// --- Variable Data ---
+let age = 30;
+let cgpa = 3.50;
+let address = "Gongachora, Rangpur";
+let subject = "Backend Engineering";
+let married = false;
+let accountBalance = 89.5982145897;
+let gmail = "programmeraziz216@gmail.com";
+let phone = "01568451112";
+let skills = "C, JavaScript, C++, Python";
+let hobbies = "Coding, Reading, Traveling";
+let session = "2025-26";
+let currentStatus = "Student & Programmer";
+let language = "Bengali, English";
+
+console.log("================ STUDENT PROFILE ================");
+
+console.log(`My name is          : ${name}`);
+console.log(`My age is           : ${age}`);
+console.log(`Date of Birth       : ${dob}`);
+console.log(`My NID Number       : ${nidNumber}`);
+console.log(`My religion is      : ${religion}`);
+console.log(`My blood group is   : ${bloodGroup}`);
+
+console.log("-------------------------------------------------");
+
+console.log(`Study subject       : ${subject}`);
+console.log(`Current session     : ${session}`);
+console.log(`Current status      : ${currentStatus}`);
+console.log(`Current CGPA        : ${cgpa.toFixed(2)}`);
+console.log(`My skills are       : ${skills}`);
+console.log(`Languages I know    : ${language}`);
+
+console.log("-------------------------------------------------");
+
+console.log(`My Gmail address    : ${gmail}`);
+console.log(`Phone number        : ${phone}`);
+console.log(`Current address     : ${address}`);
+console.log(`My birth place      : ${birthPlace}`);
+console.log(`Home country        : ${country}`);
+
+console.log("-------------------------------------------------");
+
+console.log(`My hobbies are      : ${hobbies}`);
+console.log(`Am I married?       : ${married ? "Yes" : "No"}`);
+console.log(`Account Balance     : ${accountBalance.toFixed(2)} BDT`);
+
+console.log("=================================================");
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 (Professional) Version — Object ব্যবহার করে 
 
 const student = {
@@ -252,4 +312,117 @@ console.log(`My grade is: ${student.grade}`);
 console.log(`My CGPA is: ${student.cgpa.toFixed(2)}`);
 console.log(`My account balance is: $${student.accountBalance.toFixed(2)}`);
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+// --- Constant Data ---
+const name = "Mohammad Abdullah";
+const dob = "15-06-1997";
+const bloodGroup = "B+";
+const religion = "Islam";
+const country = "Bangladesh";
+const nidNumber = "1997541258745";
+const birthPlace = "Rangpur";
 
+// --- Variable Data ---
+let age = 30;
+let cgpa = 3.50;
+let address = "Gongachora, Rangpur";
+let subject = "Backend Engineering";
+let married = false;
+let accountBalance = 89.5982145897;
+let gmail = "programmeraziz216@gmail.com";
+let phone = "01568451112";
+let skills = "C, JavaScript, C++, Python";
+let hobbies = "Coding, Reading, Traveling";
+let session = "2025-26";
+let currentStatus = "Student & Programmer";
+let language = "Bengali, English";
+
+console.log("================ STUDENT PROFILE ================");
+
+console.log("Name                : " + name);
+console.log("Age                 : " + age);
+console.log("Date of Birth       : " + dob);
+console.log("NID Number          : " + nidNumber);
+console.log("Religion            : " + religion);
+console.log("Blood Group         : " + bloodGroup);
+console.log("-------------------------------------------------");
+console.log("Subject             : " + subject);
+console.log("Session             : " + session);
+console.log("Status              : " + currentStatus);
+console.log("CGPA                : " + cgpa.toFixed(2));
+console.log("Skills              : " + skills);
+console.log("Languages           : " + language);
+console.log("-------------------------------------------------");
+console.log("Gmail               : " + gmail);
+console.log("Phone               : " + phone);
+console.log("Address             : " + address);
+console.log("Birth Place         : " + birthPlace);
+console.log("Country             : " + country);
+console.log("-------------------------------------------------");
+console.log("Hobbies             : " + hobbies);
+console.log("Married             : " + (married ? "Yes" : "No"));
+console.log("Balance             : " + accountBalance.toFixed(2) + " BDT");
+
+console.log("=================================================");
+-----------------------------------------------------------------------------------------------------------------------------------
+
+// --- Constant Data (যা পরিবর্তন হবে না) ---
+const name = "Mohammad Abdullah";
+const dob = "15-06-1997";
+const bloodGroup = "B+";
+const religion = "Islam";
+const country = "Bangladesh";
+const nidNumber = "1997541258745"; // নতুন যোগ করা হয়েছে
+const birthPlace = "Rangpur";      // নতুন যোগ করা হয়েছে
+
+// --- Variable Data (যা ভবিষ্যতে পরিবর্তন হতে পারে) ---
+let age = 30;
+let cgpa = 3.50;
+let address = "Gongachora, Rangpur";
+let subject = "Backend Engineering";
+let married = false;
+let accountBalance = 89.5982145897;
+let gmail = "programmeraziz216@gmail.com";
+let phone = "01568451112";
+let skills = "C, JavaScript, C++, Python";
+let hobbies = "Coding, Reading, Traveling";
+let session = "2025-26";
+let currentStatus = "Student & Programmer"; // নতুন যোগ করা হয়েছে
+let language = "Bengali, English";           // নতুন যোগ করা হয়েছে
+
+console.log("================ STUDENT PROFILE ================");
+
+// ব্যক্তিগত তথ্য
+console.log("Name".padEnd(20) + " : " + name);
+console.log("Age".padEnd(20) + " : " + age);
+console.log("Date of Birth".padEnd(20) + " : " + dob);
+console.log("NID Number".padEnd(20) + " : " + nidNumber);
+console.log("Religion".padEnd(20) + " : " + religion);
+console.log("Blood Group".padEnd(20) + " : " + bloodGroup);
+
+console.log("-------------------------------------------------");
+
+// প্রাতিষ্ঠানিক ও পেশাগত তথ্য
+console.log("Subject".padEnd(20) + " : " + subject);
+console.log("Session".padEnd(20) + " : " + session);
+console.log("Status".padEnd(20) + " : " + currentStatus);
+console.log("CGPA".padEnd(20) + " : " + cgpa.toFixed(2));
+console.log("Skills".padEnd(20) + " : " + skills);
+console.log("Languages".padEnd(20) + " : " + language);
+
+console.log("-------------------------------------------------");
+
+// যোগাযোগ ও ঠিকানা
+console.log("Gmail".padEnd(20) + " : " + gmail);
+console.log("Phone".padEnd(20) + " : " + phone);
+console.log("Address".padEnd(20) + " : " + address);
+console.log("Birth Place".padEnd(20) + " : " + birthPlace);
+
+console.log("-------------------------------------------------");
+
+// অন্যান্য
+console.log("Hobbies".padEnd(20) + " : " + hobbies);
+console.log("Married".padEnd(20) + " : " + (married ? "Yes" : "No"));
+console.log("Balance".padEnd(20) + " : " + accountBalance.toFixed(2) + " BDT");
+
+console.log("=================================================");
