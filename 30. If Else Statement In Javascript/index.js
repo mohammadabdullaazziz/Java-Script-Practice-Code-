@@ -75,7 +75,16 @@ if (amount = "100") {
     console.log("Abdullah");
 }
 
-JavaScript-এ Arithmetic Operators (গাণিতিক অপারেটর যেমন: +, -, *, /) কাজ করার সময় ডাটাকে সাধারণত Number (সংখ্যা) টাইপে কনভার্ট বা রূপান্তর করে নেয়। এই প্রক্রিয়াটিকে জাভাস্ক্রিপ্টের ভাষায় বলা হয় Type Coercion।
+
+JavaScript-এ Arithmetic Operators ব্যবহার করার সময় অনেক ক্ষেত্রে ডাটা অটোমেটিকভাবে Number টাইপে রূপান্তর হয়। এটাকেই বলা হয় Type Coercion। (গাণিতিক অপারেটর যেমন: +, -, *, /) 
+    
+Type Coercion:   
+যখন JavaScript নিজে থেকেই এক টাইপের ডাটাকে অন্য টাইপে পরিবর্তন করে, তখন তাকে Type Coercion বলে।
+
+"10" → string
+5 → number
+Arithmetic operator ব্যবহার করলে JavaScript অনেক সময় string কে number বানিয়ে ফেলে।
+
 
 console.log("10" - 2);   // আউটপুট: 8 (স্ট্রিং "10" সংখ্যা ১০-এ রূপান্তরিত হয়েছে)
 console.log("5" * "4");  // আউটপুট: 20 (দুটি স্ট্রিংই সংখ্যায় রূপান্তরিত হয়েছে)
