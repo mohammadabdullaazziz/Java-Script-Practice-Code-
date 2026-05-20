@@ -174,6 +174,31 @@ document.write(name,country,age);
 var name,country,age;
 
 
+
+let name = "Abdullah Arman";
+name = "Mohammad";
+let age = 30;
+let country = "Bangladesh </br>";
+let subject = "Programming";
+
+// এখানে age এর পর একটি "</br>" যোগ করা হয়েছে
+document.write(name, age, "</br>", country, subject);
+
+
+টেমপ্লেট লিটারেল (Template Literal) ব্যবহার করা (প্রফেশনাল নিয়ম)
+প্রফেশনাল জাভাস্ক্রিপ্টে কমা দিয়ে দিয়ে না লিখে ব্যাকটিক ( ` ) চিহ্ন ব্যবহার করে খুব সুন্দরভাবে এইচটিএমএল ট্যাগ বসানো যায়:
+
+let name = "Abdullah Arman";
+name = "Mohammad";
+
+let age = 30;
+
+let country = "Bangladesh";
+let subject = "Programming";
+
+// ব্যাকটিক (`) চিহ্নের ভেতরে একদম সাজিয়ে লেখা যায়
+document.write(`${name} </br> ${age} </br> ${country} </br> ${subject}`);
+
 var name = "Abdullah ", 
 country = "Bangladesh ", 
 age = 29;
